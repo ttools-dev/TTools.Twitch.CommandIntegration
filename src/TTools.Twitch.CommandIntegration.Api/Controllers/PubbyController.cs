@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TTools.Twitch.CommandIntegration.Service.Interfaces;
 
 namespace TTools.Twitch.CommandIntegration.Api.Controllers;
 
@@ -6,10 +7,12 @@ namespace TTools.Twitch.CommandIntegration.Api.Controllers;
 public class PubbyController : ControllerBase
 {
     private readonly ILogger<PubbyController> _logger;
+    private readonly IDjSongService _songService;
 
-    public PubbyController(ILogger<PubbyController> logger)
+    public PubbyController(ILogger<PubbyController> logger, IDjSongService songService)
     {
         _logger = logger;
+        _songService = songService;
     }
 
     [HttpGet("current_song/{roomId}")]
