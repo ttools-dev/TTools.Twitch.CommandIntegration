@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTools.Twitch.CommandIntegration.Api", "src\TTools.Twitch.CommandIntegration.Api\TTools.Twitch.CommandIntegration.Api.csproj", "{26036416-2A3A-4A07-84EB-99A8590F0B50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTools.Twitch.CommandIntegration.Service", "src\TTools.Twitch.CommandIntegration.Service\TTools.Twitch.CommandIntegration.Service.csproj", "{877D06CB-69B1-42CB-A3C1-9F5F68849F52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{26036416-2A3A-4A07-84EB-99A8590F0B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26036416-2A3A-4A07-84EB-99A8590F0B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26036416-2A3A-4A07-84EB-99A8590F0B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877D06CB-69B1-42CB-A3C1-9F5F68849F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877D06CB-69B1-42CB-A3C1-9F5F68849F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877D06CB-69B1-42CB-A3C1-9F5F68849F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877D06CB-69B1-42CB-A3C1-9F5F68849F52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
