@@ -2,10 +2,10 @@ using StatusGeneric;
 
 namespace TTools.Twitch.CommandIntegration.Service.Models;
 
-public class CurrentSong
+public readonly struct CurrentSong
 {
-    public string Title { get; }
-    public string Requester { get; }
+    public readonly string Title;
+    public readonly string Requester;
 
     private CurrentSong(string title, string requester)
     {
