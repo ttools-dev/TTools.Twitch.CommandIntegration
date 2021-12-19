@@ -7,6 +7,6 @@ public class PubbySongService : IDjSongService
 {
     public Task<CurrentSong> GetCurrentSongForRoomAsync(string roomId)
     {
-        throw new NotImplementedException();
+        return Task.FromResult(CurrentSong.CreateInstance("No title", "requester").Result);
     }
 }
