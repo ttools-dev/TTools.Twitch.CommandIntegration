@@ -44,7 +44,7 @@ public class PubbyController : ControllerBase
             {
                 _logger.LogInformation("Room ID {RoomId} could not be found, updated at {UpdatedAt}",
                     roomId, notFound.LastUpdated);
-                return NotFound($"Room {roomId} was not found");
+                return NotFound($"Room \"{roomId}\" was not found");
             },
             unavailable =>
             {
