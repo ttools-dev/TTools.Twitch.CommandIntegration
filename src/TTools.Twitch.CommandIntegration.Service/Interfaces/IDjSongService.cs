@@ -1,4 +1,5 @@
-﻿using TTools.Twitch.CommandIntegration.Service.Models;
+﻿using OneOf;
+using TTools.Twitch.CommandIntegration.Service.Models;
 
 namespace TTools.Twitch.CommandIntegration.Service.Interfaces;
 
@@ -11,6 +12,6 @@ public interface IDjSongService
     /// Gets the currently playing song for the given room ID
     /// </summary>
     /// <param name="roomId">The DJ's room ID (path segment)</param>
-    /// <returns>The current song</returns>
-    Task<CurrentSong> GetCurrentSongForRoomAsync(string roomId);
+    /// <returns>The current song, a not playing status or an unavailable reason</returns>
+    Task<OneOf<CurrentSong, NotPlaying, Unavailable>> GetCurrentSongForRoomAsync(string roomId);
 }
