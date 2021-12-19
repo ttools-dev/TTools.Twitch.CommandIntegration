@@ -12,7 +12,7 @@ public class PubbyController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("CurrentSong/{roomId}")]
+    [HttpGet("current_song/{roomId}")]
     public async Task<ActionResult> GetCurrentSong(string roomId)
     {
         _logger.LogInformation("Getting current song for room ID {RoomId}", roomId);
