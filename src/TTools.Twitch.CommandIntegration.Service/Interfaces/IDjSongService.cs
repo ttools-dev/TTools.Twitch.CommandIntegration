@@ -13,5 +13,5 @@ public interface IDjSongService
     /// </summary>
     /// <param name="roomId">The DJ's room ID (path segment)</param>
     /// <returns>The current song, a not playing status or an unavailable reason</returns>
-    Task<OneOf<CurrentSong, NotPlaying, Unavailable>> GetCurrentSongForRoomAsync(string roomId);
+    Task<OneOf<CurrentSong, NotPlaying, NotFound, Unavailable>> GetCurrentSongForRoomAsync(string roomId);
 }
