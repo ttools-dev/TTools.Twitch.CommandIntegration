@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using TTools.Twitch.CommandIntegration.Service.Interfaces;
 
@@ -16,6 +17,9 @@ public class PubbyController : ControllerBase
     }
 
     [HttpGet("current_song/{roomId}")]
+    [Produces(MediaTypeNames.Text.Plain), Consumes(MediaTypeNames.Text.Plain)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult> GetCurrentSong(string roomId)
     {
         _logger.LogInformation("Getting current song for room ID {RoomId}", roomId);
