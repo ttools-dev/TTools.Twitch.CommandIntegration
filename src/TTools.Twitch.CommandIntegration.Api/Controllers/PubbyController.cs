@@ -23,6 +23,13 @@ public class PubbyController : ControllerBase
     public async Task<ActionResult> GetCurrentSong(string roomId)
     {
         _logger.LogInformation("Getting current song for room ID {RoomId}", roomId);
-        return Ok("TODO");
+
+        // TODO: return OneOf of current song, not playing, or unavailable
+        var response = await _songService.GetCurrentSongForRoomAsync(roomId);
+
+        _logger.LogInformation("Room ID {RoomId} is playing {SongTitle} requested by {Requester}",
+            roomId, response.Title, response.Requester);
+
+        return Ok($"Now playing: \"{response.Title}\" requested by \"{response.Requester}\"");
     }
 }
