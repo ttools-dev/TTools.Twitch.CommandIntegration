@@ -12,6 +12,10 @@ public class PubbyController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetDummyEndpoint")]
-    public async Task<ActionResult> Get() => Ok();
+    [HttpGet("CurrentSong/{roomId}")]
+    public async Task<ActionResult> GetCurrentSong(string roomId)
+    {
+        _logger.LogInformation("Getting current song for room ID {RoomId}", roomId);
+        return Ok("TODO");
+    }
 }
