@@ -2,12 +2,12 @@ using StatusGeneric;
 
 namespace TTools.Twitch.CommandIntegration.Service.Models;
 
-public class CurrentSongModel
+public class CurrentSong
 {
     public string Title { get; }
     public string Requester { get; }
 
-    private CurrentSongModel(string title, string requester)
+    private CurrentSong(string title, string requester)
     {
         Title = title;
         Requester = requester;
@@ -19,9 +19,9 @@ public class CurrentSongModel
     /// <param name="title">The title of the current song</param>
     /// <param name="requester">The requester of the current song</param>
     /// <returns>A status containing a CurrentSong instance or validation errors</returns>
-    public static IStatus<CurrentSongModel> CreateInstance(string title, string requester)
+    public static IStatus<CurrentSong> CreateInstance(string title, string requester)
     {
-        var status = new StatusHandler<CurrentSongModel>();
+        var status = new StatusHandler<CurrentSong>();
 
         if (string.IsNullOrWhiteSpace(title))
             status.AddError("Title cannot be empty");
@@ -29,6 +29,6 @@ public class CurrentSongModel
         if (string.IsNullOrWhiteSpace(requester))
             status.AddError("Requester cannot be empty");
 
-        return status.HasErrors ? status : status.SetResult(new CurrentSongModel(title, requester));
+        return status.HasErrors ? status : status.SetResult(new CurrentSong(title, requester));
     }
 }
