@@ -1,3 +1,6 @@
+using TTools.Twitch.CommandIntegration.Service.Interfaces;
+using TTools.Twitch.CommandIntegration.Service.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+builder.Services.AddScoped<IDjSongService, PubbySongService>();
 
 var app = builder.Build();
 
