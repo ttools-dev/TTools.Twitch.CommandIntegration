@@ -7,6 +7,6 @@ public class PubbySongService : IDjSongService
 {
     public Task<CurrentSong> GetCurrentSongForRoomAsync(string roomId)
     {
-        return Task.FromResult(CurrentSong.CreateInstance("No title", "requester").Result);
+        return Task.FromResult(CurrentSong.CreateInstance("No title", "requester", DateTime.Now).Result);
     }
 }
