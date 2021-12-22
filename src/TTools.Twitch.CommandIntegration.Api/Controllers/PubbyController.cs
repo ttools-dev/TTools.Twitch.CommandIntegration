@@ -20,7 +20,7 @@ public class PubbyController : ControllerBase
     [Produces(MediaTypeNames.Text.Plain), Consumes(MediaTypeNames.Text.Plain)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult> GetCurrentSong(string roomId)
+    public async Task<ActionResult> GetCurrentSong(string roomId, string? prefix = "SingsNote")
     {
         _logger.LogInformation("Getting current song for room ID {RoomId}", roomId);
 
@@ -32,7 +32,7 @@ public class PubbyController : ControllerBase
                 _logger.LogInformation(
                     "Room ID {RoomId} is playing {SongTitle} requested by {Requester} updated at {UpdatedAt}",
                     roomId, song.Title, song.Requester, song.LastUpdated);
-                return Ok($"Now playing: \"{song.Title}\" requested by \"{song.Requester}\"");
+                return Ok($"{prefix} Now playing: \"{song.Title}\" requested by \"{song.Requester}\"");
             },
             notPlaying =>
             {
