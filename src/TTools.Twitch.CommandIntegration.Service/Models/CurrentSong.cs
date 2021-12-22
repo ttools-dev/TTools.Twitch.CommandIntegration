@@ -31,13 +31,13 @@ public readonly struct CurrentSong
         var status = new StatusHandler<CurrentSong>();
 
         if (string.IsNullOrWhiteSpace(title))
-            status.AddError("Title cannot be empty");
+            status.AddError("Title cannot be empty", nameof(title));
 
         if (string.IsNullOrWhiteSpace(requester))
-            status.AddError("Requester cannot be empty");
+            status.AddError("Requester cannot be empty", nameof(requester));
 
         if (string.IsNullOrWhiteSpace(mediaUrl))
-            status.AddError("Media URL cannot be empty");
+            status.AddError("Media URL cannot be empty", nameof(requester));
 
         return status.HasErrors ? status : status.SetResult(new CurrentSong(title, requester, mediaUrl, lastUpdated));
     }
