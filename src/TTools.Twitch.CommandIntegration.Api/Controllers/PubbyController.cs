@@ -32,7 +32,8 @@ public class PubbyController : ControllerBase
                 _logger.LogInformation(
                     "Room ID {RoomId} is playing {SongTitle} requested by {Requester} updated at {UpdatedAt}",
                     roomId, song.Title, song.Requester, song.LastUpdated);
-                return Ok($"{prefix} Now playing: \"{song.Title}\" requested by \"{song.Requester}\"");
+                return Ok($"{prefix} Now playing: \"{song.Title}\" " +
+                          $"requested by \"{song.Requester}\" -> {song.MediaUrl}");
             },
             notPlaying =>
             {
