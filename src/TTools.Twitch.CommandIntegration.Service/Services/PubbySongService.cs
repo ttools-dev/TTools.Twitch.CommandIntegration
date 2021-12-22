@@ -10,7 +10,8 @@ public class PubbySongService : IDjSongService
     {
         return roomId switch
         {
-            "found" => CurrentSong.CreateInstance("Darude Sandstorm", "jammehcow", "", DateTime.Now).Result,
+            "found" => CurrentSong.CreateInstance("Darude Sandstorm", "jammehcow", "https://youtu.be/y6120QOlsfU",
+                DateTime.Now).Result,
             "no-song" => NotPlaying.CreateInstance(DateTime.Now).Result,
             "unavailable" => Unavailable.CreateInstance("Service timed out", DateTime.Now).Result,
             _ => NotFound.CreateInstance(DateTime.Now).Result
